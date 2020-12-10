@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment 12</string>
+    <string name="title_app">Flicker Photos</string>
+    <string name="title_search">Search</string>
+    <string name="could_not_connect">Could not connect to the internet</string>
+    <string name="retry">Retry</string>
+</resources>
