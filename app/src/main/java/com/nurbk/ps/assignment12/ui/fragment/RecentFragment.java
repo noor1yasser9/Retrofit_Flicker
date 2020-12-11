@@ -87,7 +87,12 @@ public class RecentFragment extends Fragment {
                     @Override
                     public void onResponse(Call<Root> call, Response<Root> response) {
 
-                        photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
+                        try {
+
+                            photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
+                        } catch (Exception e) {
+
+                        }
                         progressBar.setVisibility(View.GONE);
                     }
 

@@ -90,7 +90,6 @@ public class SearchFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
 
-
     }
 
 
@@ -101,9 +100,12 @@ public class SearchFragment extends Fragment {
                 .enqueue(new Callback<Root>() {
                     @Override
                     public void onResponse(Call<Root> call, Response<Root> response) {
-
+                        try {
                             photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
-                            progressBar.setVisibility(View.GONE);
+                        } catch (Exception e) {
+
+                        }
+                        progressBar.setVisibility(View.GONE);
 
                     }
 
