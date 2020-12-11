@@ -13,8 +13,6 @@ import retrofit2.http.Query;
 public interface PhotosApiInterface {
 
 
-//    https://www.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=&format=rest
-
     @GET("rest/?api_key=5aa34d49b5889b2ad7b98ffd0fe03f4a&format=json&nojsoncallback=1")
     Call<Root> getMethodData(@Query("method") String method,
                              @Query("user_id") String userId,
