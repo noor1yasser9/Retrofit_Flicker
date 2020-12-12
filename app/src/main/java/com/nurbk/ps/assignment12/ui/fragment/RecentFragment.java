@@ -86,7 +86,7 @@ public class RecentFragment extends Fragment {
                 .enqueue(new Callback<Root>() {
                     @Override
                     public void onResponse(Call<Root> call, Response<Root> response) {
-
+                        if (response.isSuccessful() && response.body().getStat().equals("ok"))
                         try {
 
                             photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());

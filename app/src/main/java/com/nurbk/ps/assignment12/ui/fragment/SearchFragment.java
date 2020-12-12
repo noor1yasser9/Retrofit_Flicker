@@ -100,11 +100,12 @@ public class SearchFragment extends Fragment {
                 .enqueue(new Callback<Root>() {
                     @Override
                     public void onResponse(Call<Root> call, Response<Root> response) {
-                        try {
-                            photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
-                        } catch (Exception e) {
+                        if (response.isSuccessful() && response.body().getStat().equals("ok"))
+                            try {
+                                photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
+                            } catch (Exception e) {
 
-                        }
+                            }
                         progressBar.setVisibility(View.GONE);
 
                     }

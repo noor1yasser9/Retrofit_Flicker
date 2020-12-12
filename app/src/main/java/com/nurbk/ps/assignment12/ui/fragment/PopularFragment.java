@@ -90,12 +90,13 @@ public class PopularFragment extends Fragment {
                     @Override
                     public void onResponse(Call<Root> call, Response<Root> response) {
 
-                        try {
+                        if (response.isSuccessful() && response.body().getStat().equals("ok"))
+                            try {
 
-                            photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
-                        } catch (Exception e) {
+                                photosAdapter.setPhotoList(response.body().getPhotos().getPhoto());
+                            } catch (Exception e) {
 
-                        }
+                            }
                         progressBar.setVisibility(View.GONE);
 
                     }
